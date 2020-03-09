@@ -28,7 +28,6 @@ $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(
 );
 
 function setStatus(data) {
-    console.log(data);
     script = $('.statusScript');
     id = script.attr('id');
     $(`[data-id="${id}"]`)[0].innerText += ` -- ${data.data.status}`;
