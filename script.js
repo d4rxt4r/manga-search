@@ -68,7 +68,12 @@ function loadTiles(baseUrl, searchParams, siteId) {
 function setStatus(data) {
     const script = $('.statusScript');
     const id = script.attr('id');
-    $(`[data-id="${id}"]`)[0].innerText += ` -- ${data.data.status}`;
+    const title = $(`[data-id="${id}"]`);
+    if (title.children().length == 0) {
+        title[0].innerHTML += `<span> -- ${data.data.status}</span>`;
+    } else {
+        title.children()[0].innerText = ` -- ${data.data.status}`;
+    }
     script.remove();
 }
 
