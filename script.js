@@ -67,11 +67,11 @@ function getTitlesFromPage(siteId, offset = 0) {
 }
 
 const loadBtn = document.getElementById('load');
-let siteSelect = document.getElementById('siteSelect');
-let pageInput = document.getElementById('pageInput');
+const siteSelect = document.getElementById('siteSelect');
+const pageInput = document.getElementById('pageInput');
 
-let siteIdCookie = Cookies.get('siteId');
-let pageNumCookie = Cookies.get('pageNum');
+const siteIdCookie = Cookies.get('siteId');
+const pageNumCookie = Cookies.get('pageNum');
 
 if (siteIdCookie != undefined && pageNumCookie != undefined) {
 	siteSelect.value = siteIdCookie;
