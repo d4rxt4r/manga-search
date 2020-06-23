@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 </head>
 
-<body>
+<body style="background-color: #f7f8f9;">
     <div class="pagination p-2">
         <select class="form-select" id="siteSelect">
             <option selected value="1">readmanga</option>
@@ -21,10 +21,19 @@
         <button class="btn btn-primary" id="load">Загрузить!</button>
     </div>
 
+    <template id="noResults">
+        <div class="empty">
+            <div class="empty-icon">
+                <i class="icon icon-cross icon-4x"></i>
+            </div>
+            <p class="empty-title h5">Результатов нет!</p>
+        </div>
+    </template>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
         </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="script.js"></script>
 </body>
 
