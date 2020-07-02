@@ -21,7 +21,7 @@ function getStatus(id, site) {
 }
 
 function getTitlesFromPage(siteId, offset = 0) {
-    $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(`${baseUrls[siteId - 1]}/list?sortType=rate&filter=translated&offset=${offset}`),
+    $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(`${baseUrls[siteId - 1]}/list/tag/noyaoi?sortType=rate&filter=translated&offset=${offset}`),
         data => {
             const tiles = $(data.contents).find('.tile');
             const tilesTag = tiles.find('.tags');
