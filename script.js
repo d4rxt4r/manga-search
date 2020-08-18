@@ -1,4 +1,4 @@
-const baseUrls = ['https://readmanga.me', 'https://mintmanga.live']
+const baseUrls = ['https://readmanga.live', 'https://mintmanga.live']
 
 function setStatus(data) {
     const script = $('.statusScript');
