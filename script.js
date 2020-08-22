@@ -1,8 +1,5 @@
 const baseUrls = ['https://readmanga.live', 'https://mintmanga.live']
-<<<<<<< HEAD
 const searchUrls = [`${baseUrls[0]}/list?sortType=votes&filter=translated`, `${baseUrls[1]}/list/tag/noyaoi?sortType=rate&filter=translated`];
-=======
->>>>>>> 0e624496a5f86c22e5888cae162a922c440dd482
 
 function setStatus(data) {
     const script = $('.status-script');
