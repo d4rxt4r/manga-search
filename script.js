@@ -1,7 +1,8 @@
-const baseUrls = ['https://readmanga.me', 'https://mintmanga.live']
+const baseUrls = ['https://readmanga.live', 'https://mintmanga.live']
+const searchUrls = [`${baseUrls[0]}/list?sortType=votes&filter=translated`, `${baseUrls[1]}/list/tag/noyaoi?sortType=rate&filter=translated`];
 
 function setStatus(data) {
-    const script = $('.statusScript');
+    const script = $('.status-script');
     const id = script.attr('id');
     const title = $(`[data-id="${id}"]`);
     if (title.children().length == 0) {
@@ -12,16 +13,16 @@ function setStatus(data) {
     script.remove();
 }
 
-function getStatus(id, site) {
+function getStatus(id, siteId) {
     const statusScript = document.createElement('script');
     statusScript.id = id;
-    statusScript.classList.add('statusScript');
-    statusScript.src = `https://grouple.co/external/status?callback=setStatus&id=${id}&site=${site}&user=582791`
+    statusScript.classList.add('status-script');
+    statusScript.src = `https://grouple.co/external/status?callback=setStatus&id=${id}&site=${siteId}&user=582791`
     document.body.append(statusScript);
 }
 
 function getTitlesFromPage(siteId, offset = 0) {
-    $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(`${baseUrls[siteId - 1]}/list/tag/noyaoi?sortType=rate&filter=translated&offset=${offset}`),
+    $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(`${searchUrls[siteId - 1]}&offset=${offset}`),
         data => {
             const tiles = $(data.contents).find('.tile');
             const tilesTag = tiles.find('.tags');
