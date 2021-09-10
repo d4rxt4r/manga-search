@@ -7,6 +7,26 @@
     <title>[read|mint]manga & shakai simple search</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <style>
+        .link-wrap {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            padding: .5em;
+        }
+
+        .link-wrap > span {
+            display: flex;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .chip {
+            margin-left: 8px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body style="background-color: #f7f8f9;">
@@ -14,7 +34,7 @@
         <select class="form-select" id="siteSelect">
             <option selected value="1">readmanga</option>
             <option value="2">mintmanga</option>
-            <option value="3">shakai</option>
+            <!-- <option value="3">shakai</option> -->
         </select>
 
         <input class="form-input" type="number" step="1" value="1" placeholder="0" id="pageInput" style="width: 25vw">
